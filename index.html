@@ -32,34 +32,77 @@
 
     /* HERO */
     .hero{position:relative;min-height:100vh;overflow:hidden}
-    .hero-bg{position:absolute;inset:0;background-image:url('assets/hero.png');background-size:cover;background-position:center 35%;animation:zoomIn 14s ease-out forwards}
+    .hero-bg{
+      position:absolute;inset:0;
+      background-image:url('assets/hero.png');
+      background-size:cover;
+      background-position:center 35%;
+      animation:zoomIn 14s ease-out forwards;
+    }
     @keyframes zoomIn{from{transform:scale(1.04)}to{transform:scale(1.00)}}
-    .hero-overlay{position:absolute;inset:0;background:rgba(13,27,46,0.10)}
-    .hero-content{position:absolute;top:75px;right:2rem;z-index:2;max-width:320px;text-align:right;animation:fadeUp .9s .2s both;background:rgba(10,20,40,0.38);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:12px;padding:1.2rem 1.4rem;border:1px solid rgba(255,255,255,0.10)}
-    .hero-title{font-family:'Syne',sans-serif;font-size:clamp(1.2rem,1.8vw,1.6rem);font-weight:800;line-height:1.18;margin-bottom:.7rem;color:var(--white)}
-    .hero-desc{font-size:.78rem;font-weight:300;color:var(--text-body);line-height:1.7;margin-bottom:1rem;max-width:300px}
-    .hero-tag{font-size:.62rem;margin-bottom:.8rem}
-    .hero-actions{justify-content:flex-end;margin-bottom:1rem}
-    .btn-amber{padding:.6rem 1.1rem;font-size:.78rem}
-    .btn-outline{padding:.6rem 1.1rem;font-size:.78rem}
-    .hero-stats{justify-content:flex-end;border-top:1px solid rgba(255,255,255,0.12);padding-top:1rem}
-    .hero-stat-val{font-size:1.2rem}
-    .hero-stat-label{font-size:.68rem}
-    @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-    .hero-tag{display:inline-flex;align-items:center;gap:.5rem;background:rgba(46,171,110,0.15);border:1px solid rgba(46,171,110,0.35);color:var(--green-lt);font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .85rem;border-radius:4px;margin-bottom:1.4rem}
-    .hero-tag::before{content:'●';font-size:.45rem}
-    .hero-title{font-family:'Syne',sans-serif;font-size:clamp(1.75rem,3vw,2.6rem);font-weight:800;line-height:1.18;margin-bottom:1.2rem;color:var(--white)}
+    .hero-overlay{position:absolute;inset:0;background:transparent}
+
+    /* Texte centré dans le ciel — discret, sans fond */
+    .hero-content{
+      position:absolute;
+      top:80px;
+      left:50%;
+      transform:translateX(-50%);
+      z-index:2;
+      text-align:center;
+      white-space:nowrap;
+      animation:fadeUp .9s .2s both;
+    }
+    @keyframes fadeUp{from{opacity:0;transform:translateX(-50%) translateY(12px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
+    .hero-tag{
+      display:inline-flex;align-items:center;gap:.4rem;
+      font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+      color:var(--green-lt);
+      background:rgba(13,27,46,0.35);
+      border:1px solid rgba(46,171,110,0.3);
+      padding:.25rem .7rem;border-radius:4px;
+      margin-bottom:.6rem;
+      text-shadow:none;
+    }
+    .hero-tag::before{content:'●';font-size:.4rem}
+    .hero-title{
+      font-family:'Syne',sans-serif;
+      font-size:clamp(1.1rem,1.8vw,1.5rem);
+      font-weight:700;
+      color:var(--white);
+      line-height:1.2;
+      margin-bottom:.6rem;
+      text-shadow:0 1px 8px rgba(0,0,0,0.6);
+    }
     .hero-title .amber{color:var(--amber)}
-    .hero-desc{font-size:.93rem;font-weight:300;color:var(--text-body);line-height:1.8;margin-bottom:2rem;max-width:500px}
-    .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.8rem}
-    .btn-amber{display:inline-flex;align-items:center;gap:.5rem;background:var(--amber);color:var(--navy);padding:.85rem 1.8rem;border-radius:6px;font-weight:700;font-size:.88rem;letter-spacing:.04em;text-transform:uppercase;transition:background .2s,transform .15s;box-shadow:0 4px 20px rgba(245,166,35,.4)}
-    .btn-amber:hover{background:var(--amber-lt);transform:translateY(-2px)}
-    .btn-outline{display:inline-flex;align-items:center;gap:.5rem;background:transparent;color:var(--white);padding:.85rem 1.8rem;border-radius:6px;border:1.5px solid rgba(255,255,255,.3);font-weight:600;font-size:.88rem;letter-spacing:.04em;text-transform:uppercase;transition:border-color .2s,color .2s}
-    .btn-outline:hover{border-color:var(--green-lt);color:var(--green-lt)}
-    .hero-stats{display:flex;gap:2.5rem;flex-wrap:wrap;padding-top:1.8rem;border-top:1px solid rgba(255,255,255,.12)}
-    .hero-stat-val{font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;color:var(--amber);line-height:1;margin-bottom:.2rem}
-    .hero-stat-label{font-size:.75rem;color:var(--text-dim)}
-    .hero-scroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);width:34px;height:34px;border:2px solid rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);font-size:.85rem;animation:bobble 2.5s ease-in-out infinite;cursor:pointer}
+    .hero-desc{display:none}
+    .hero-actions{
+      display:flex;align-items:center;justify-content:center;gap:.8rem;
+      margin-bottom:0;
+    }
+    .btn-amber{
+      padding:.55rem 1.3rem;font-size:.8rem;letter-spacing:.06em;
+      background:var(--amber)!important;
+      color:var(--navy)!important;
+      border:none;
+      box-shadow:0 2px 12px rgba(245,166,35,0.4);
+    }
+    .btn-amber:hover{background:var(--amber-lt)!important;transform:translateY(-1px)}
+    .btn-outline{
+      padding:.55rem 1.3rem;font-size:.8rem;letter-spacing:.06em;
+      border-color:rgba(255,255,255,0.7);
+      color:var(--white);
+      background:rgba(255,255,255,0.08);
+    }
+    .btn-outline:hover{border-color:var(--white);background:rgba(255,255,255,0.18);color:var(--white)}
+    .hero-stats{display:none}
+    .hero-scroll{
+      position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
+      width:32px;height:32px;border:1.5px solid rgba(255,255,255,.25);
+      border-radius:50%;display:flex;align-items:center;justify-content:center;
+      color:rgba(255,255,255,.5);font-size:.8rem;
+      animation:bobble 2.5s ease-in-out infinite;cursor:pointer;z-index:2;
+    }
     @keyframes bobble{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(6px)}}
 
     /* BADGES */
@@ -436,6 +479,14 @@
     </ul>
     <p class="footer-copy">© 2025 Alpes'Air Thermique · MJIA Consulting SASU · Auvergne-Rhône-Alpes</p>
   </footer>
+
+  <!-- BANDEAU SITE EN COURS -->
+  <div style="background:#0D1B2E;border-top:1px solid rgba(255,255,255,0.06);padding:.9rem 2rem;text-align:center;">
+    <p style="font-size:.75rem;color:rgba(255,255,255,0.35);font-family:'Inter',sans-serif;letter-spacing:.03em;">
+      🚧 &nbsp;Site en cours de finalisation — certaines informations et fonctionnalités seront complétées prochainement.
+      Pour toute demande urgente : <a href="mailto:contact@alpesair-thermique.fr" style="color:rgba(245,166,35,0.7);text-decoration:none;">contact@alpesair-thermique.fr</a>
+    </p>
+  </div>
 
 </body>
 </html>
