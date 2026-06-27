@@ -35,9 +35,16 @@
     .hero-bg{position:absolute;inset:0;background-image:url('assets/hero.png');background-size:cover;background-position:center 35%;animation:zoomIn 14s ease-out forwards}
     @keyframes zoomIn{from{transform:scale(1.04)}to{transform:scale(1.00)}}
     .hero-overlay{position:absolute;inset:0;background:rgba(13,27,46,0.10)}
-    .hero-content{position:absolute;top:90px;right:2.5rem;z-index:2;max-width:420px;text-align:right;animation:fadeUp .9s .2s both;background:rgba(10,20,40,0.52);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:16px;padding:1.8rem 2rem;border:1px solid rgba(255,255,255,0.12)}
-    .hero-actions{justify-content:flex-end}
-    .hero-stats{justify-content:flex-end;border-top:1px solid rgba(255,255,255,0.15)}
+    .hero-content{position:absolute;top:75px;right:2rem;z-index:2;max-width:320px;text-align:right;animation:fadeUp .9s .2s both;background:rgba(10,20,40,0.38);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:12px;padding:1.2rem 1.4rem;border:1px solid rgba(255,255,255,0.10)}
+    .hero-title{font-family:'Syne',sans-serif;font-size:clamp(1.2rem,1.8vw,1.6rem);font-weight:800;line-height:1.18;margin-bottom:.7rem;color:var(--white)}
+    .hero-desc{font-size:.78rem;font-weight:300;color:var(--text-body);line-height:1.7;margin-bottom:1rem;max-width:300px}
+    .hero-tag{font-size:.62rem;margin-bottom:.8rem}
+    .hero-actions{justify-content:flex-end;margin-bottom:1rem}
+    .btn-amber{padding:.6rem 1.1rem;font-size:.78rem}
+    .btn-outline{padding:.6rem 1.1rem;font-size:.78rem}
+    .hero-stats{justify-content:flex-end;border-top:1px solid rgba(255,255,255,0.12);padding-top:1rem}
+    .hero-stat-val{font-size:1.2rem}
+    .hero-stat-label{font-size:.68rem}
     @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
     .hero-tag{display:inline-flex;align-items:center;gap:.5rem;background:rgba(46,171,110,0.15);border:1px solid rgba(46,171,110,0.35);color:var(--green-lt);font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .85rem;border-radius:4px;margin-bottom:1.4rem}
     .hero-tag::before{content:'●';font-size:.45rem}
