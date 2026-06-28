@@ -29,6 +29,8 @@
     .nav-links a:hover{color:var(--white)}
     .nav-cta{background:var(--amber);color:var(--navy)!important;padding:.5rem 1.2rem;border-radius:6px;font-weight:600!important;transition:background .2s!important}
     .nav-cta:hover{background:var(--amber-lt)!important}
+    .nav-tel{display:flex;align-items:center;gap:.4rem;color:var(--white);font-weight:700;font-size:.95rem;letter-spacing:.02em;border:1.5px solid rgba(255,255,255,0.25);padding:.4rem 1rem;border-radius:6px;transition:border-color .2s}
+    .nav-tel:hover{border-color:var(--amber);color:var(--amber)}
 
     /* HERO */
     .hero{position:relative;min-height:100vh;overflow:hidden}
@@ -218,7 +220,30 @@
 
     /* RESPONSIVE */
     @media(max-width:900px){.services-grid,.real-grid,.pourquoi-grid,.badges-inner{grid-template-columns:1fr 1fr}.contact-wrap{grid-template-columns:1fr;gap:2rem}}
-    @media(max-width:600px){nav{padding:.9rem 1.2rem}.nav-links{display:none}.hero-content{padding:0 1.2rem}.section{padding:3.5rem 1.2rem}.badges-band{padding:1.5rem 1.2rem}.services-grid,.real-grid,.pourquoi-grid,.badges-inner{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}.hero-stats{gap:1.5rem}footer{flex-direction:column;text-align:center}.footer-links{justify-content:center;flex-wrap:wrap;gap:1rem}}
+    @media(max-width:600px){
+      nav{padding:.9rem 1.2rem}
+      .nav-links{display:none}
+      .hero-bg{background-position:60% 50%}
+      .hero-content{
+        top:68px;left:0;right:0;
+        transform:none;
+        border-radius:0;
+        padding:.7rem 1rem;
+        flex-direction:column;
+        gap:.5rem;
+        text-align:center;
+        white-space:normal;
+      }
+      .hero-title{font-size:1.1rem;white-space:normal}
+      .hero-actions{flex-direction:row;justify-content:center;gap:.5rem}
+      .btn-amber,.btn-outline{padding:.45rem .8rem;font-size:.72rem}
+      .section{padding:3.5rem 1.2rem}
+      .badges-band{padding:1.5rem 1.2rem}
+      .services-grid,.real-grid,.pourquoi-grid,.badges-inner{grid-template-columns:1fr}
+      .form-row{grid-template-columns:1fr}
+      footer{flex-direction:column;text-align:center}
+      .footer-links{justify-content:center;flex-wrap:wrap;gap:1rem}
+    }
   </style>
 </head>
 <body>
@@ -229,6 +254,8 @@
       <li><a href="#services">Nos prestations</a></li>
       <li><a href="#realisations">Réalisations</a></li>
       <li><a href="#pourquoi">Pourquoi nous</a></li>
+      <li><a href="#aides">Aides & financement</a></li>
+      <li><a href="tel:+33667868081" class="nav-tel">📞 06 67 86 80 81</a></li>
       <li><a href="#contact" class="nav-cta">Devis gratuit</a></li>
     </ul>
   </nav>
@@ -240,7 +267,7 @@
       <span class="hero-tag">Artisan qualifié · Auvergne-Rhône-Alpes</span>
       <h1 class="hero-title">
         Le confort thermique,<br/>
-        <span class="amber">fait par un expert.</span>
+        <span class="amber">pensé pour vous.</span>
       </h1>
       <p class="hero-desc">Pompe à chaleur, climatisation, VMC, électricité — je prends en charge votre projet de A à Z, avec le sérieux d'un professionnel qualifié et la disponibilité d'un artisan indépendant.</p>
       <div class="hero-actions">
@@ -399,13 +426,22 @@
       <h2 class="section-title">Des chantiers réels,<br/>des clients satisfaits</h2>
       <p class="section-lead">Chaque installation est unique. Voici un aperçu de ce que j'ai réalisé récemment.</p>
       <!-- URGENCE CANICULE -->
-      <div style="background:linear-gradient(135deg,rgba(245,166,35,0.12),rgba(245,166,35,0.05));border:1.5px solid rgba(245,166,35,0.35);border-radius:12px;padding:1.2rem 1.8rem;margin-bottom:2.5rem;display:flex;align-items:center;gap:1.2rem;">
+      <div style="background:linear-gradient(135deg,rgba(245,166,35,0.12),rgba(245,166,35,0.05));border:1.5px solid rgba(245,166,35,0.35);border-radius:12px;padding:1.2rem 1.8rem;margin-bottom:1.2rem;display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap">
         <span style="font-size:2rem;flex-shrink:0">🌡️</span>
-        <div>
-          <p style="font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;color:var(--amber);margin-bottom:.2rem">Canicule — Intervention rapide climatisation</p>
-          <p style="font-size:.85rem;color:var(--text-body);line-height:1.6">Vous souffrez de la chaleur ? J'installe votre climatisation réversible en <strong style="color:var(--white)">48 à 72h</strong>. Devis gratuit, intervention rapide sur toute l'Auvergne-Rhône-Alpes.</p>
+        <div style="flex:1;min-width:200px">
+          <p style="font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:var(--amber);margin-bottom:.3rem;letter-spacing:.02em">🔥 Canicule — Intervention rapide climatisation</p>
+          <p style="font-size:.88rem;color:#111111;line-height:1.7;font-weight:500">Vous souffrez de la chaleur ? J'installe votre climatisation réversible en <strong style="color:var(--amber);font-size:1.05rem;font-weight:800;background:rgba(245,166,35,0.2);padding:.1rem .4rem;border-radius:4px">48 à 72h</strong>. Devis gratuit, intervention rapide sur toute l'Auvergne-Rhône-Alpes.</p>
         </div>
-        <a href="#contact" style="flex-shrink:0;background:var(--amber);color:var(--navy);padding:.6rem 1.3rem;border-radius:6px;font-weight:700;font-size:.82rem;text-decoration:none;white-space:nowrap">📞 Appel urgent</a>
+        <a href="tel:+33667868081" style="flex-shrink:0;background:var(--amber);color:var(--navy);padding:.6rem 1.3rem;border-radius:6px;font-weight:700;font-size:.82rem;text-decoration:none;white-space:nowrap">📞 06 67 86 80 81</a>
+      </div>
+      <!-- PARRAINAGE -->
+      <div style="background:linear-gradient(135deg,rgba(46,171,110,0.08),rgba(46,171,110,0.03));border:1px solid rgba(46,171,110,0.2);border-radius:12px;padding:1rem 1.8rem;margin-bottom:2.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+        <span style="font-size:1.6rem;flex-shrink:0">🤝</span>
+        <p style="font-size:.85rem;color:var(--text-body);line-height:1.6;flex:1;min-width:200px">
+          <strong style="color:#1A7A4A">Un ami satisfait vaut mieux que dix publicités.</strong> 
+          <span style="color:#111111;font-weight:500">Si vous êtes content de notre travail, parlez de nous autour de vous — nous nous en souviendrons.</span> 
+          <em style="color:#444444">C'est comme ça que se construit une belle réputation.</em>
+        </p>
       </div>
 
       <div class="real-grid">
@@ -446,11 +482,73 @@
     </div>
   </section>
 
+  <!-- SECTION AIDES -->
+  <section class="section" id="aides" style="background:var(--navy)">
+    <div class="section-inner">
+      <p class="section-tag">Financement & aides</p>
+      <h2 class="section-title">Vous ne savez peut-être pas<br/><span style="color:var(--amber)">ce à quoi vous avez droit.</span></h2>
+      <p class="section-lead">Il existe aujourd'hui plusieurs dispositifs qui peuvent <strong style="color:var(--white)">réduire considérablement le coût de vos travaux</strong>. Beaucoup de nos clients sont surpris de ce qu'ils peuvent obtenir. Appelez-nous — on vous explique tout en 5 minutes.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;margin-bottom:3rem">
+
+        <div style="background:var(--navy-card);border:1px solid var(--border);border-radius:12px;padding:1.8rem;text-align:center;transition:border-color .3s;cursor:pointer" onmouseover="this.style.borderColor='rgba(245,166,35,0.4)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)'">
+          <div style="font-size:2.2rem;margin-bottom:.8rem">💰</div>
+          <h3 style="font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;color:var(--amber);margin-bottom:.5rem">MaPrimeRénov'</h3>
+          <p style="font-size:.8rem;color:var(--text-dim);line-height:1.6;margin-bottom:1rem">Une prime de l'État versée directement. Le montant vous surprendra.</p>
+          <span style="font-size:.7rem;font-weight:700;letter-spacing:.08em;color:var(--green-lt);border:1px solid rgba(61,214,140,.3);padding:.2rem .6rem;border-radius:4px">Appelez-nous →</span>
+        </div>
+
+        <div style="background:var(--navy-card);border:1px solid var(--border);border-radius:12px;padding:1.8rem;text-align:center;transition:border-color .3s;cursor:pointer" onmouseover="this.style.borderColor='rgba(245,166,35,0.4)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)'">
+          <div style="font-size:2.2rem;margin-bottom:.8rem">📋</div>
+          <h3 style="font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;color:var(--amber);margin-bottom:.5rem">CEE</h3>
+          <p style="font-size:.8rem;color:var(--text-dim);line-height:1.6;margin-bottom:1rem">Les fournisseurs d'énergie financent une partie de vos travaux. Peu de gens le savent.</p>
+          <span style="font-size:.7rem;font-weight:700;letter-spacing:.08em;color:var(--green-lt);border:1px solid rgba(61,214,140,.3);padding:.2rem .6rem;border-radius:4px">Appelez-nous →</span>
+        </div>
+
+        <div style="background:var(--navy-card);border:1px solid var(--border);border-radius:12px;padding:1.8rem;text-align:center;transition:border-color .3s;cursor:pointer" onmouseover="this.style.borderColor='rgba(245,166,35,0.4)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)'">
+          <div style="font-size:2.2rem;margin-bottom:.8rem">🏦</div>
+          <h3 style="font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;color:var(--amber);margin-bottom:.5rem">Éco-PTZ</h3>
+          <p style="font-size:.8rem;color:var(--text-dim);line-height:1.6;margin-bottom:1rem">Jusqu'à 50 000 € à taux zéro. Sans condition de revenus. Oui, vraiment.</p>
+          <span style="font-size:.7rem;font-weight:700;letter-spacing:.08em;color:var(--green-lt);border:1px solid rgba(61,214,140,.3);padding:.2rem .6rem;border-radius:4px">Appelez-nous →</span>
+        </div>
+
+        <div style="background:var(--navy-card);border:1px solid var(--border);border-radius:12px;padding:1.8rem;text-align:center;transition:border-color .3s;cursor:pointer" onmouseover="this.style.borderColor='rgba(245,166,35,0.4)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)'">
+          <div style="font-size:2.2rem;margin-bottom:.8rem">🧾</div>
+          <h3 style="font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;color:var(--amber);margin-bottom:.5rem">TVA à 5,5%</h3>
+          <p style="font-size:.8rem;color:var(--text-dim);line-height:1.6;margin-bottom:1rem">Au lieu de 20%. Applicable immédiatement sur vos travaux. Disponible dès maintenant.</p>
+          <span style="font-size:.7rem;font-weight:700;letter-spacing:.08em;color:var(--green-lt);border:1px solid rgba(61,214,140,.3);padding:.2rem .6rem;border-radius:4px">Disponible →</span>
+        </div>
+
+        <div style="background:var(--navy-card);border:1px solid var(--border);border-radius:12px;padding:1.8rem;text-align:center;transition:border-color .3s;cursor:pointer" onmouseover="this.style.borderColor='rgba(245,166,35,0.4)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)'">
+          <div style="font-size:2.2rem;margin-bottom:.8rem">🌿</div>
+          <h3 style="font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;color:var(--amber);margin-bottom:.5rem">Aides locales</h3>
+          <p style="font-size:.8rem;color:var(--text-dim);line-height:1.6;margin-bottom:1rem">Région, département, commune… Des aides supplémentaires existent près de chez vous.</p>
+          <span style="font-size:.7rem;font-weight:700;letter-spacing:.08em;color:var(--green-lt);border:1px solid rgba(61,214,140,.3);padding:.2rem .6rem;border-radius:4px">Renseignez-vous →</span>
+        </div>
+
+      </div>
+
+      <!-- ACCROCHE FINALE -->
+      <div style="background:linear-gradient(135deg,rgba(245,166,35,0.08),rgba(46,171,110,0.05));border:1.5px solid rgba(245,166,35,0.2);border-radius:14px;padding:2rem;text-align:center">
+        <p style="font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:var(--white);margin-bottom:.5rem">
+          💡 Vous voulez savoir exactement ce à quoi <em style="color:var(--amber)">vous</em> avez droit ?
+        </p>
+        <p style="font-size:.88rem;color:var(--text-body);margin-bottom:1.4rem;line-height:1.7">
+          Un appel de 5 minutes suffit. On fait le point ensemble sur votre situation, votre logement et les aides cumulables. <strong style="color:var(--white)">Gratuit, sans engagement, sans jargon.</strong>
+        </p>
+        <a href="tel:+33667868081" style="display:inline-flex;align-items:center;gap:.6rem;background:var(--amber);color:var(--navy);padding:.85rem 2rem;border-radius:6px;font-family:'Syne',sans-serif;font-weight:700;font-size:.9rem;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;box-shadow:0 4px 20px rgba(245,166,35,0.35)">
+          📞 On vous explique tout — Appelez maintenant
+        </a>
+      </div>
+
+    </div>
+  </section>
+
   <div class="cta-band">
     <h2>Un projet thermique ou électrique ?<br/>Devis gratuit, réponse rapide.</h2>
     <p>Réponse sous 48h · Sans engagement · Déplacement inclus dans le devis</p>
     <div class="cta-band-actions">
-      <a href="tel:+33600000000" class="btn-navy">📞 Appeler directement</a>
+      <a href="tel:+33667868081" class="btn-navy">📞 Appeler directement</a>
       <a href="#contact" class="btn-navy-outline">✉️ Envoyer un message</a>
     </div>
   </div>
@@ -477,7 +575,7 @@
             </div>
             <div class="form-row">
               <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="jean@exemple.fr" required /></div>
-              <div class="form-group"><label for="tel">Téléphone</label><input type="tel" id="tel" name="telephone" placeholder="06 xx xx xx xx" /></div>
+              <div class="form-group"><label for="tel">Téléphone</label><input type="tel" id="tel" name="telephone" placeholder="06 67 86 80 81" /></div>
             </div>
             <div class="form-group">
               <label for="service">Type de prestation</label>
